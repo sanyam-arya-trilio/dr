@@ -3,13 +3,18 @@ import { MatDialog } from '@angular/material/dialog';
 import { CloudAddDialogComponent } from '../cloud-add-dialog/cloud-add-dialog.component';
 import { INewCloud } from 'src/app/interfaces';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CloudOperationsService } from '../services/cloud-operations.service';
 @Component({
   selector: 'app-cloud-landing',
   templateUrl: './cloud-landing.component.html',
   styleUrls: ['./cloud-landing.component.scss']
 })
 export class CloudLandingComponent implements OnInit {
-  constructor(public dialog: MatDialog, private _snackBar: MatSnackBar) {}
+  constructor(
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar,
+    private cloudOperationService: CloudOperationsService
+  ) {}
   newCloud: INewCloud = {
     admin: '',
     domain: 'default',
@@ -44,6 +49,10 @@ export class CloudLandingComponent implements OnInit {
         this.openSnackBar('All fields are required', 'Done', 2);
         this.newCloud = result;
         this.addCloud();
+      } else {
+        this.cloudOperationService.loginToOsCloud(result).subscribe(data => {
+          console.log(data);
+        });
       }
     });
   }
