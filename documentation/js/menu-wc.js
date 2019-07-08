@@ -58,13 +58,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-1782c07a77b6943fc2efec1846bb36db"' : 'data-target="#xs-components-links-module-AppModule-1782c07a77b6943fc2efec1846bb36db"' }>
+                                            'data-target="#components-links-module-AppModule-d1f997d033103ef04353d30bc928bb9a"' : 'data-target="#xs-components-links-module-AppModule-d1f997d033103ef04353d30bc928bb9a"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-1782c07a77b6943fc2efec1846bb36db"' :
-                                            'id="xs-components-links-module-AppModule-1782c07a77b6943fc2efec1846bb36db"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-d1f997d033103ef04353d30bc928bb9a"' :
+                                            'id="xs-components-links-module-AppModule-d1f997d033103ef04353d30bc928bb9a"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -78,8 +78,43 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="modules/AuthenticationModule.html" data-type="entity-link">AuthenticationModule</a>
                             </li>
+                            <li class="link">
+                                <a href="modules/CloudModule.html" data-type="entity-link">CloudModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-CloudModule-69f8ee8664528f498cb851edeb04f32b"' : 'data-target="#xs-components-links-module-CloudModule-69f8ee8664528f498cb851edeb04f32b"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-CloudModule-69f8ee8664528f498cb851edeb04f32b"' :
+                                            'id="xs-components-links-module-CloudModule-69f8ee8664528f498cb851edeb04f32b"' }>
+                                            <li class="link">
+                                                <a href="components/AddCloudDialog.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">AddCloudDialog</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/CloudLandingComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">CloudLandingComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
                 </ul>
                 </li>
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#interfaces-links"' :
+                            'data-target="#xs-interfaces-links"' }>
+                            <span class="icon ion-md-information-circle-outline"></span>
+                            <span>Interfaces</span>
+                            <span class="icon ion-ios-arrow-down"></span>
+                        </div>
+                        <ul class="links collapse" ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
+                            <li class="link">
+                                <a href="interfaces/DialogData.html" data-type="entity-link">DialogData</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#miscellaneous-links"'
                             : 'data-target="#xs-miscellaneous-links"' }>

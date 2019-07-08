@@ -1,0 +1,22 @@
+.no-clouds {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+}
+
+.icon-text {
+    margin-left: -40vw;
+    opacity: 0.4;
+    cursor: pointer;
+    mat-icon {
+        font-size: 10em;
+    }
+}
+
+#fabButton {
+    position: fixed;
+    top: 90%;
+    left: 95%;
+    font-size: 3em;
+}

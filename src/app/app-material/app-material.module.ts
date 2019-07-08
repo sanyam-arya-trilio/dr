@@ -4,7 +4,11 @@ import {
   MatInputModule,
   MatButtonModule,
   MatToolbarModule,
-  MatIconModule
+  MatIconModule,
+  MatMenuModule,
+  MatDividerModule,
+  MatDialogModule,
+  MatSnackBarModule
 } from '@angular/material';
 @NgModule({
   imports: [
@@ -12,8 +16,21 @@ import {
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule,
+    MatDividerModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
-  exports: [MatInputModule, MatButtonModule, MatToolbarModule, MatIconModule]
+  exports: [
+    MatInputModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    MatDividerModule,
+    MatDialogModule,
+    MatSnackBarModule
+  ]
 })
 export class AppMaterialModule {}

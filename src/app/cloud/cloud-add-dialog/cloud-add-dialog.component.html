@@ -1,0 +1,37 @@
+<div class="dialog-container">
+    <img id="openstackLogo" src="assets/openstack-logo.png" alt="logo">
+    <h1 mat-dialog-title>Add new cloud</h1>
+    <div mat-dialog-content>
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name" [(ngModel)]="data.name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Domain ID</mat-label>
+            <input matInput placeholder="Domain ID" [(ngModel)]="data.domain">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Auth URL</mat-label>
+            <input matInput placeholder="Auth URL" [(ngModel)]="data.url">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Cloud Admin</mat-label>
+            <input matInput placeholder="Cloud Admin" [(ngModel)]="data.admin">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" [(ngModel)]="data.password">
+            <button color="accent" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">No Thanks</button>
+        <button mat-button [mat-dialog-close]="data" cdkFocusInitial color="primary">Add Cloud</button>
+    </div>
+</div>

@@ -334,13 +334,29 @@ export class AppComponent {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
     &lt;mat-toolbar-row&gt;
-        &lt;span&gt;Third Line&lt;/span&gt;
+        &lt;span&gt;Disaster Recovery&lt;/span&gt;
         &lt;span class&#x3D;&quot;example-spacer&quot;&gt;&lt;/span&gt;
-        &lt;mat-icon class&#x3D;&quot;example-icon&quot; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Example heart icon&quot;&gt;favorite&lt;/mat-icon&gt;
-        &lt;mat-icon class&#x3D;&quot;example-icon&quot; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Example delete icon&quot;&gt;delete&lt;/mat-icon&gt;
+        &lt;button mat-icon-button [matMenuTriggerFor]&#x3D;&quot;menu&quot; aria-label&#x3D;&quot;Example icon-button with a menu&quot;&gt;
+            &lt;mat-icon&gt;more_vert&lt;/mat-icon&gt;
+          &lt;/button&gt;
+        &lt;mat-menu #menu&#x3D;&quot;matMenu&quot;&gt;
+            &lt;img src&#x3D;&quot;assets/john-wick.jpg&quot; alt&#x3D;&quot;profile photo&quot;&gt;
+            &lt;h2&gt;John Wick&lt;/h2&gt;
+
+            &lt;mat-divider&gt;&lt;/mat-divider&gt;
+            &lt;button mat-menu-item&gt;
+              &lt;mat-icon&gt;person&lt;/mat-icon&gt;
+              &lt;span&gt;Profile&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button mat-menu-item&gt;
+              &lt;mat-icon&gt;power_settings_new&lt;/mat-icon&gt;
+              &lt;span&gt;Sign Out&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/mat-menu&gt;
+
     &lt;/mat-toolbar-row&gt;
 &lt;/mat-toolbar&gt;
-&lt;h1&gt;Welcome to {{title}}!&lt;/h1&gt;</code></pre>
+&lt;router-outlet&gt;&lt;/router-outlet&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -353,6 +369,18 @@ export class AppComponent {
 
 .example-spacer {
     flex: 1 1 auto;
+}
+
+img {
+    box-sizing: border-box;
+    width: 13em;
+    border-radius: 50%;
+    margin: 2em;
+    border: 0.4em solid #333;
+}
+
+h2 {
+    text-align: center;
 }</code></pre>
     </div>
 
@@ -381,8 +409,8 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-toolbar color="primary">    <mat-toolbar-row>        <span>Third Line</span>        <span class="example-spacer"></span>        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>    </mat-toolbar-row></mat-toolbar><h1>Welcome to {{title}}!</h1></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'}];
+        var COMPONENT_TEMPLATE = '<div><mat-toolbar color="primary">    <mat-toolbar-row>        <span>Disaster Recovery</span>        <span class="example-spacer"></span>        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">            <mat-icon>more_vert</mat-icon>          </button>        <mat-menu #menu="matMenu">            <img src="assets/john-wick.jpg" alt="profile photo">            <h2>John Wick</h2>            <mat-divider></mat-divider>            <button mat-menu-item>              <mat-icon>person</mat-icon>              <span>Profile</span>            </button>            <button mat-menu-item>              <mat-icon>power_settings_new</mat-icon>              <span>Sign Out</span>            </button>        </mat-menu>    </mat-toolbar-row></mat-toolbar><router-outlet></router-outlet></div>'
+    var COMPONENTS = [{'name': 'AddCloudDialog', 'selector': 'add-cloud-dialog'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CloudLandingComponent', 'selector': 'app-cloud-landing'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

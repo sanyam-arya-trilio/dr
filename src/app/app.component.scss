@@ -1,7 +1,33 @@
+@import '../var.scss';
 .example-icon {
     padding: 0 14px;
 }
 
 .example-spacer {
     flex: 1 1 auto;
+}
+
+#profilePhoto {
+    box-sizing: border-box;
+    width: 13em;
+    border-radius: 50%;
+    margin: 2em;
+    border: 0.4em solid $primary-color;
+}
+
+h2 {
+    background-color: $primary-color;
+    color: $background-color;
+    text-align: center;
+    margin: 0 0.5em;
+    padding: 0.2em 0;
+}
+
+#logo {
+    height: 6vh;
+    background-color: $background-color;
+    box-sizing: border-box;
+    padding: 1vh;
+    margin-right: 1vw;
+    border-radius: 0.5vh;
 }
