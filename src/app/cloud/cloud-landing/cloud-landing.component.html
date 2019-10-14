@@ -1,8 +1,47 @@
-<div class="no-clouds">
-    <span class="icon-text" (click)="addCloud()">
-            <mat-icon color="accent">padd_circle_outline</mat-icon>
-    </span>
+<div *ngIf="allClouds.length == 0" class="no-clouds">
+
+    <mat-icon color="accent" (click)="addCloud()">add_circle_outline</mat-icon>
+
 </div>
 <button mat-fab color="accent" (click)="addCloud()" id="fabButton">
-    +
-</button>
+                        +
+                    </button>
+<div *ngIf="allClouds.length > 0" class="clouds-added">
+    <mat-card *ngFor="let cloud of allClouds" class="example-card">
+        <mat-card-header>
+            <mat-card-title>{{cloud.name}}</mat-card-title>
+            <mat-icon [matTooltip]="cloud.is_responding ? 'online' : 'offline'" [color]="cloud.is_responding ? 'primary' : 'warn'">cloud</mat-icon>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item>
+                    <mat-icon mat-list-icon>link</mat-icon>
+                    <h4 mat-line>Auth URL</h4>
+                    <h3 mat-line>{{cloud.url}}</h3>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-icon>person</mat-icon>
+                    <h4 mat-line>User</h4>
+                    <h3 mat-line>{{cloud.user}}</h3>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-icon>domain</mat-icon>
+                    <h4 mat-line>Domain</h4>
+                    <h3 mat-line>{{cloud.domain}}</h3>
+                </mat-list-item>
+
+
+            </mat-list>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-icon-button matTooltip="Edit this cloud information" (click)="addCloud(cloud)">
+                                            <mat-icon>edit</mat-icon>
+                                          </button>
+            <button mat-icon-button color="warn" matTooltip="Delete this cloud">
+                    
+                                                <mat-icon>delete</mat-icon>
+                                              </button>
+        </mat-card-actions>
+    </mat-card>
+
+</div>

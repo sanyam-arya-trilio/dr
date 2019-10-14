@@ -1,18 +1,39 @@
 @import '../../../var.scss';
 .dialog-container {
     h1 {
-        border-radius: 0.2em;
-        border: 0.1em solid $primary-color;
         color: $primary-color;
         margin: 0.4em 0;
         padding: 0.05em 0;
+        text-align: center;
     }
     text-align: center;
     mat-form-field {
         width: 100%;
     }
+    mat-dialog-actions {
+        display: flex;
+        background-color: red;
+    }
 }
 
-#openstackLogo {
-    width: 10vw;
+input::-webkit-input-placeholder {
+    color: #aaaaaa !important;
+}
+
+input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #aaaaaa !important;
+}
+
+input::-moz-placeholder {
+    /* Firefox 1aa */
+    color: #aaaaaa !important;
+}
+
+input:-ms-input-placeholder {
+    color: #aaaaaa !important;
+}
+
+mat-label {
+    color: #aaaaaa;
 }

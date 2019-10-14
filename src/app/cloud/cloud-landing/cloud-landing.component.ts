@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CloudAddDialogComponent } from '../cloud-add-dialog/cloud-add-dialog.component';
-import { INewCloud } from 'src/app/interfaces';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { IDialogData, INewCloud } from 'src/app/interfaces';
+import { CloudAddDialogComponent } from '../cloud-add-dialog/cloud-add-dialog.component';
 import { CloudOperationsService } from '../services/cloud-operations.service';
 @Component({
   selector: 'app-cloud-landing',
@@ -15,45 +15,77 @@ export class CloudLandingComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private cloudOperationService: CloudOperationsService
   ) {}
-  newCloud: INewCloud = {
-    admin: '',
-    domain: 'default',
-    name: 'cloud1',
-    password: '',
-    url: ''
-  };
-  ngOnInit() {}
-  openSnackBar(message: string, action: string, durationInSeconds: number) {
+  public allClouds: INewCloud[] = [];
+  public newCloud: INewCloud;
+  ngOnInit() {
+    this.cloudOperationService.currentCloudData.subscribe(data => {
+      this.allClouds = data.map(element => {
+        element.password = '';
+        return element;
+      });
+    });
+  }
+  public openSnackBar(
+    message: string,
+    action: string,
+    durationInSeconds: number
+  ) {
     this._snackBar.open(message, action, {
       duration: durationInSeconds * 1000
     });
   }
 
-  checkEmpty = (newObject: Object): boolean => {
-    let returnThis = true;
+  isEmpty = (newObject: Object): boolean => {
+    let returnThis = false;
     Object.keys(newObject).forEach(element => {
       if (newObject[element] === '' || newObject[element] === ' ') {
-        returnThis = false;
+        returnThis = true;
       }
     });
     return returnThis;
   }
-  addCloud(): void {
+
+  public addCloud(cloud?: INewCloud): void {
+    const title = cloud ? 'Update cloud' : 'Add new Cloud';
+    this.setDialogData(cloud);
+    console.log(this.newCloud);
+
     const dialogRef = this.dialog.open(CloudAddDialogComponent, {
       width: '500px',
-      data: this.newCloud
-    });
-
-    dialogRef.afterClosed().subscribe((result: INewCloud) => {
-      if (!this.checkEmpty(result)) {
-        this.openSnackBar('All fields are required', 'Done', 2);
-        this.newCloud = result;
-        this.addCloud();
-      } else {
-        this.cloudOperationService.loginToOsCloud(result).subscribe(data => {
-          console.log(data);
-        });
+      data: {
+        cloud: this.newCloud,
+        title
       }
     });
+
+    dialogRef.afterClosed().subscribe((result: IDialogData) => {
+      console.log('results after close', result);
+
+      if (result !== undefined) {
+        if (this.isEmpty(result.cloud)) {
+          this.openSnackBar('All fields are required', 'Done', 5);
+          this.addCloud(result.cloud);
+        } else {
+          this.cloudOperationService
+            .addNewCloud(result.cloud)
+            .subscribe(clouds => {
+              this.allClouds = clouds;
+              console.log(this.allClouds);
+            });
+        }
+      }
+    });
+  }
+
+  private setDialogData(cloud: INewCloud) {
+    this.newCloud = cloud
+      ? cloud
+      : {
+          user: '',
+          domain: 'default',
+          name: '',
+          password: '',
+          url: ''
+        };
   }
 }

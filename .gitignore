@@ -2,7 +2,7 @@
 
 # My custom ignores
 configGitLocal.sh
-documentation
+/documentation
 
 # compiled output
 /dist

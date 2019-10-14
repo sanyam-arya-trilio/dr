@@ -12,7 +12,7 @@
 $dr-primary: mat-palette($mat-light-green, 700);
 $dr-accent: mat-palette($mat-light-green, A700, A100, A400);
 // The warn palette is optional (defaults to red).
-$dr-warn: mat-palette($mat-red);
+$dr-warn: mat-palette($mat-red, A700);
 // Create the theme object (a Sass map containing all of the palettes).
 $dr-theme: mat-light-theme($dr-primary, $dr-accent, $dr-warn);
 // Include theme styles for core and each component used in your app.

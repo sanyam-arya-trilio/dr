@@ -3,20 +3,48 @@
     align-items: center;
     justify-content: center;
     height: 85vh;
-}
-
-.icon-text {
-    margin-left: -40vw;
-    opacity: 0.4;
-    cursor: pointer;
     mat-icon {
+        opacity: 0.3;
+        cursor: pointer;
         font-size: 10em;
     }
 }
 
 #fabButton {
     position: fixed;
-    top: 90%;
-    left: 95%;
+    top: 90vh;
+    left: 95vw;
     font-size: 3em;
+}
+
+.clouds-added {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.example-card {
+    max-width: 400px;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+mat-card {
+    width: 18em;
+    margin: 1.5em;
+    mat-card-header {
+        display: flex;
+        justify-content: space-between;
+        mat-icon {
+            font-size: 1.8em;
+        }
+    }
+    mat-card-content {
+        background-color: #f8f8f8;
+        mat-icon {
+            color: #777;
+        }
+    }
 }

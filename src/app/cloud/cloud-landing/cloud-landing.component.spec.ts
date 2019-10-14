@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CloudLandingComponent } from './cloud-landing.component';
+import { AppMaterialModule } from 'src/app/app-material/app-material.module';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('CloudLandingComponent', () => {
   let component: CloudLandingComponent;
@@ -8,9 +12,14 @@ describe('CloudLandingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CloudLandingComponent ]
-    })
-    .compileComponents();
+      declarations: [CloudLandingComponent],
+      imports: [
+        BrowserAnimationsModule,
+        AppMaterialModule,
+        FormsModule,
+        HttpClientModule
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

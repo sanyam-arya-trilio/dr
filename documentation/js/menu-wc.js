@@ -82,16 +82,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/CloudModule.html" data-type="entity-link">CloudModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-CloudModule-69f8ee8664528f498cb851edeb04f32b"' : 'data-target="#xs-components-links-module-CloudModule-69f8ee8664528f498cb851edeb04f32b"' }>
+                                            'data-target="#components-links-module-CloudModule-8ec0fcc92d7666a107d32284ce88bc7a"' : 'data-target="#xs-components-links-module-CloudModule-8ec0fcc92d7666a107d32284ce88bc7a"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-CloudModule-69f8ee8664528f498cb851edeb04f32b"' :
-                                            'id="xs-components-links-module-CloudModule-69f8ee8664528f498cb851edeb04f32b"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-CloudModule-8ec0fcc92d7666a107d32284ce88bc7a"' :
+                                            'id="xs-components-links-module-CloudModule-8ec0fcc92d7666a107d32284ce88bc7a"' }>
                                             <li class="link">
-                                                <a href="components/AddCloudDialog.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">AddCloudDialog</a>
+                                                <a href="components/CloudAddDialogComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">CloudAddDialogComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/CloudLandingComponent.html"
@@ -99,6 +99,21 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             </li>
                                         </ul>
                                     </li>
+                                <li class="chapter inner">
+                                    <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                        'data-target="#injectables-links-module-CloudModule-8ec0fcc92d7666a107d32284ce88bc7a"' : 'data-target="#xs-injectables-links-module-CloudModule-8ec0fcc92d7666a107d32284ce88bc7a"' }>
+                                        <span class="icon ion-md-arrow-round-down"></span>
+                                        <span>Injectables</span>
+                                        <span class="icon ion-ios-arrow-down"></span>
+                                    </div>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-CloudModule-8ec0fcc92d7666a107d32284ce88bc7a"' :
+                                        'id="xs-injectables-links-module-CloudModule-8ec0fcc92d7666a107d32284ce88bc7a"' }>
+                                        <li class="link">
+                                            <a href="injectables/CloudOperationsService.html"
+                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>CloudOperationsService</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </li>
                 </ul>
                 </li>
@@ -111,7 +126,52 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse" ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
-                                <a href="interfaces/DialogData.html" data-type="entity-link">DialogData</a>
+                                <a href="interfaces/Auth.html" data-type="entity-link">Auth</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Catalog.html" data-type="entity-link">Catalog</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Domain.html" data-type="entity-link">Domain</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Endpoint.html" data-type="entity-link">Endpoint</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Error.html" data-type="entity-link">Error</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Identity.html" data-type="entity-link">Identity</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IdName.html" data-type="entity-link">IdName</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IDomainScoped.html" data-type="entity-link">IDomainScoped</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IError.html" data-type="entity-link">IError</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/INewCloud.html" data-type="entity-link">INewCloud</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IRecDomainScoped.html" data-type="entity-link">IRecDomainScoped</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Password.html" data-type="entity-link">Password</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Scope.html" data-type="entity-link">Scope</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Token.html" data-type="entity-link">Token</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/User.html" data-type="entity-link">User</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/User-1.html" data-type="entity-link">User</a>
                             </li>
                         </ul>
                     </li>
@@ -123,6 +183,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
                         <ul class="links collapse" ${ isNormalMode ? 'id="miscellaneous-links"' : 'id="xs-miscellaneous-links"' }>
+                            <li class="link">
+                                <a href="miscellaneous/enumerations.html" data-type="entity-link">Enums</a>
+                            </li>
                             <li class="link">
                                 <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
                             </li>
