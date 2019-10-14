@@ -9,14 +9,15 @@
 
 #profilePhoto {
     box-sizing: border-box;
-    width: 13em;
+    width: 3em;
     border-radius: 50%;
-    margin: 0.5em 2em;
-    border: 0.4em solid $primary-color;
+    // margin-right: 2em;
+    border: 0.08em solid $accent-color;
 }
 
 h2 {
-    color: $primary-color;
+    // background-color: $accent-color;
+    // color: $background-color;
     text-align: center;
     margin: 0 0.5em;
     padding: 0.2em 0;
@@ -29,4 +30,29 @@ h2 {
     padding: 0.8vh;
     margin-right: 1vw;
     border-radius: 0.5vh;
+}
+
+.side-nav-menu {
+    list-style-type: none;
+    margin: 0px;
+    padding: 1em 0;
+    width: 14em;
+}
+
+.side-nav-menu-item {}
+
+.side-nav-menu-a {
+    text-decoration: none;
+    display: flex;
+    padding: 1em 0.5em;
+    color: #333333;
+}
+
+.side-nav-menu-a:hover {
+    box-shadow: 0px 0.5px 0.5px 0.5px #333333 !important;
+}
+
+.side-nav-menu-a-active {
+    border-right: 0.5em solid $accent-color;
+    color: $accent-color;
 }

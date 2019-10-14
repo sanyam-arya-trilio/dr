@@ -89,3 +89,5 @@ export class CloudLandingComponent implements OnInit {
         };
   }
 }
+
+// http://192.168.29.3:5000/v3/auth/tokens

@@ -6,7 +6,7 @@
 <button mat-fab color="accent" (click)="addCloud()" id="fabButton">
                         +
                     </button>
-<div *ngIf="allClouds.length > 0" class="clouds-added">
+<div *ngIf="allClouds.length > 0" class="clouds-added scrollbar-content-area">
     <mat-card *ngFor="let cloud of allClouds" class="example-card">
         <mat-card-header>
             <mat-card-title>{{cloud.name}}</mat-card-title>

@@ -1,26 +1,43 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <img src="assets/trilio-logo.png" alt="logo" id="logo">
-        <span>Disaster Recovery</span>
-        <span class="example-spacer"></span>
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-        <mat-menu #menu="matMenu">
-            <img src="assets/john-wick.jpg" alt="profile photo" id="profilePhoto">
-            <h2>John Wick</h2>
+    <img src="assets/trilio-logo.png" alt="logo" id="logo">
 
-            <mat-divider></mat-divider>
-            <button mat-menu-item>
-              <mat-icon>person</mat-icon>
-              <span>Profile</span>
-            </button>
-            <button mat-menu-item>
-              <mat-icon>power_settings_new</mat-icon>
-              <span>Sign Out</span>
-            </button>
-        </mat-menu>
+    <span class="example-spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <img src="assets/john-wick.jpg" alt="profile photo" id="profilePhoto">
+    </button>
+    <mat-menu #menu="matMenu">
+        <h2>John Wick</h2>
 
-    </mat-toolbar-row>
+        <mat-divider></mat-divider>
+        <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>Profile</span>
+      </button>
+        <button mat-menu-item>
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Sign Out</span>
+      </button>
+    </mat-menu>
+
 </mat-toolbar>
-<router-outlet></router-outlet>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened [fixedInViewport]="true" [fixedBottomGap]="0" [fixedTopGap]="64" class="primary-color-bg">
+        <ul class="side-nav-menu">
+            <li class="side-nav-menu-item">
+                <a routerLink="/clouds" routerLinkActive="side-nav-menu-a-active" class="side-nav-menu-a">
+                    <mat-icon>cloud_queue</mat-icon> <span class="example-spacer"></span> Cloud Management</a>
+            </li>
+            <li class="side-nav-menu-item">
+                <a routerLink="/orphan" routerLinkActive="side-nav-menu-a-active" class="side-nav-menu-a">
+                    <mat-icon>blur_circular</mat-icon> <span class="example-spacer"></span> Orphan Workloads</a>
+            </li>
+        </ul>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+        <router-outlet></router-outlet>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>
