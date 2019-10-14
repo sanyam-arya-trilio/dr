@@ -50,10 +50,22 @@ export class CloudLandingComponent implements OnInit {
         this.newCloud = result;
         this.addCloud();
       } else {
-        this.cloudOperationService.loginToOsCloud(result).subscribe(data => {
-          console.log(data);
+        let aHeaders;
+        let aconfig;
+        this.cloudOperationService.loginToOsCloud(result).subscribe(resp => {
+          // display its headers
+          const keys = resp.headers.keys();
+          aHeaders = keys.map(key =>
+            `${key}: ${resp.headers.get(key)}`);
+    
+          // access the body directly, which is typed as `Config`.
+          aconfig = { ... resp.body };
+          console.log(aHeaders,aconfig);
+          
         });
       }
     });
   }
 }
+
+// http://192.168.29.3:5000/v3/auth/tokens

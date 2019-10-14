@@ -28,6 +28,6 @@ export class CloudOperationsService {
       }
     };
     console.table(newCloud, dataToSend);
-    return this.http.post(newCloud.url, dataToSend);
+    return this.http.post(newCloud.url, dataToSend,{observe:'response'});
   }
 }

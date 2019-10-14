@@ -9,15 +9,15 @@
 
 #profilePhoto {
     box-sizing: border-box;
-    width: 13em;
+    width: 3em;
     border-radius: 50%;
-    margin: 2em;
-    border: 0.4em solid $primary-color;
+    // margin-right: 2em;
+    border: 0.08em solid $primary-color;
 }
 
 h2 {
-    background-color: $primary-color;
-    color: $background-color;
+    // background-color: $primary-color;
+    // color: $background-color;
     text-align: center;
     margin: 0 0.5em;
     padding: 0.2em 0;
