@@ -1,4 +1,5 @@
 export interface INewCloud {
+  id:string;
   name: string;
   domain: string;
   url: string;

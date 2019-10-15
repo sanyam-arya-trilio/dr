@@ -81,6 +81,7 @@ export class CloudLandingComponent implements OnInit {
     this.newCloud = cloud
       ? cloud
       : {
+          id:'100',
           user: '',
           domain: 'default',
           name: '',

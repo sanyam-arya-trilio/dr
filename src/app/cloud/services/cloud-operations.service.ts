@@ -10,6 +10,7 @@ export class CloudOperationsService {
   // For data sharing
   allData: INewCloud[] = [
     {
+      id:"1",
       name: 'OneCloud',
       domain: 'admin',
       is_responding: true,
@@ -17,6 +18,7 @@ export class CloudOperationsService {
       user: 'admin'
     },
     {
+      id:"2",
       name: 'Cloud Two',
       domain: 'admin',
       is_responding: true,
@@ -24,6 +26,7 @@ export class CloudOperationsService {
       user: 'admin'
     },
     {
+      id:"3",
       name: 'OneCloud',
       domain: 'admin',
       is_responding: true,
@@ -31,20 +34,7 @@ export class CloudOperationsService {
       user: 'admin'
     },
     {
-      name: 'Cloud Two',
-      domain: 'admin',
-      is_responding: false,
-      url: 'http://thisisnotsoawesome:5050/v2',
-      user: 'admin'
-    },
-    {
-      name: 'OneCloud',
-      domain: 'admin',
-      is_responding: true,
-      url: 'http://thisisawesome:5050/v2',
-      user: 'admin'
-    },
-    {
+      id:"4",
       name: 'Cloud Two',
       domain: 'admin',
       is_responding: false,
@@ -52,6 +42,7 @@ export class CloudOperationsService {
       user: 'admin'
     },
     {
+      id:"5",
       name: 'OneCloud',
       domain: 'admin',
       is_responding: true,
@@ -59,6 +50,7 @@ export class CloudOperationsService {
       user: 'admin'
     },
     {
+      id:"6",
       name: 'Cloud Two',
       domain: 'admin',
       is_responding: false,
@@ -66,6 +58,7 @@ export class CloudOperationsService {
       user: 'admin'
     },
     {
+      id:"7",
       name: 'OneCloud',
       domain: 'admin',
       is_responding: true,
@@ -73,6 +66,7 @@ export class CloudOperationsService {
       user: 'admin'
     },
     {
+      id:"8",
       name: 'Cloud Two',
       domain: 'admin',
       is_responding: false,
@@ -80,6 +74,7 @@ export class CloudOperationsService {
       user: 'admin'
     },
     {
+      id:"9",
       name: 'OneCloud',
       domain: 'admin',
       is_responding: true,
@@ -87,6 +82,23 @@ export class CloudOperationsService {
       user: 'admin'
     },
     {
+      id:"10",
+      name: 'Cloud Two',
+      domain: 'admin',
+      is_responding: false,
+      url: 'http://thisisnotsoawesome:5050/v2',
+      user: 'admin'
+    },
+    {
+      id:"11",
+      name: 'OneCloud',
+      domain: 'admin',
+      is_responding: true,
+      url: 'http://thisisawesome:5050/v2',
+      user: 'admin'
+    },
+    {
+      id:"12",
       name: 'Cloud Two',
       domain: 'admin',
       is_responding: false,
@@ -113,27 +125,27 @@ export class CloudOperationsService {
 
   constructor(private http: HttpClient) {}
 
-  public loginToOsCloud(newCloud: INewCloud) {
-    const dataToSend: IDomainScoped = {
-      auth: {
-        identity: {
-          methods: ['password'],
-          password: {
-            user: {
-              name: newCloud.user,
-              domain: { id: newCloud.domain },
-              password: newCloud.password
-            }
-          }
-        },
-        scope: {
-          domain: {
-            id: newCloud.domain
-          }
-        }
-      }
-    };
-    console.table(newCloud, dataToSend);
-    return this.http.post(newCloud.url, dataToSend,{observe:'response'});
-  }
+  // public loginToOsCloud(newCloud: INewCloud) {
+  //   const dataToSend: IDomainScoped = {
+  //     auth: {
+  //       identity: {
+  //         methods: ['password'],
+  //         password: {
+  //           user: {
+  //             name: newCloud.user,
+  //             domain: { id:" newCloud.domain }",
+  //             password: newCloud.password
+  //           }
+  //         }
+  //       },
+  //       scope: {
+  //         domain: {
+  //           id:" newCloud.domai"n
+  //         }
+  //       }
+  //     }
+  //   };
+  //   console.table(newCloud, dataToSend);
+  //   return this.http.post(newCloud.url, dataToSend,{observe:'response'});
+  // }
 }

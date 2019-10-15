@@ -8,10 +8,13 @@
                     </button>
 <div *ngIf="allClouds.length > 0" class="clouds-added scrollbar-content-area">
     <mat-card *ngFor="let cloud of allClouds" class="example-card">
-        <mat-card-header>
-            <mat-card-title>{{cloud.name}}</mat-card-title>
-            <mat-icon [matTooltip]="cloud.is_responding ? 'online' : 'offline'" [color]="cloud.is_responding ? 'primary' : 'warn'">cloud</mat-icon>
-        </mat-card-header>
+        <a routerLink="/cloud/{{cloud.id}}" class="card-link">
+            <mat-card-header>
+                <mat-card-title>{{cloud.name}}</mat-card-title>
+                <mat-icon [matTooltip]="cloud.is_responding ? 'online' : 'offline'" [color]="cloud.is_responding ? 'accent' : 'warn'">cloud</mat-icon>
+            </mat-card-header>
+        </a>
+
         <mat-card-content>
             <mat-list>
                 <mat-list-item>
@@ -33,6 +36,7 @@
 
             </mat-list>
         </mat-card-content>
+
         <mat-card-actions>
             <button mat-icon-button matTooltip="Edit this cloud information" (click)="addCloud(cloud)">
                                             <mat-icon>edit</mat-icon>

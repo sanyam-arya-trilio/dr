@@ -3,7 +3,7 @@
 $dr-primary: mat-palette($mat-grey, 50);
 $dr-accent: mat-palette($mat-light-green, 500);
 $dr-warn: mat-palette($mat-red);
-$dr-background: mat-palette($mat-grey, 400);
+$dr-background: mat-palette($mat-grey, 200);
 $dr-theme: mat-light-theme($dr-primary, $dr-accent, $dr-warn);
 @include angular-material-theme($dr-theme);
 $primary: mat-color($dr-primary);
@@ -27,15 +27,17 @@ body {
 }
 
 .scrollbar-content-area {
+    z-index: 0 !important;
     overflow: auto;
-    width: 100%;
+    width: 81.5vw;
     height: 1000px;
+    padding: 2em;
     background-color: $background;
 }
 
 .mat-toolbar {
     z-index: 999 !important;
-    box-shadow: 0px 50px 100px 20px $background !important;
+    box-shadow: 0px 1px 10px 2px #000000 !important;
 }
 
 .primary-color-bg {
@@ -45,3 +47,7 @@ body {
 .light-theme-background {
     background: green !important;
 }
+
+// .display-area {
+//     padding: 2em;
+// }
